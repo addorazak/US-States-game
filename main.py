@@ -17,10 +17,8 @@ while len(guessed_states) < 50:
 
     # Exiting when not done
     if answer_state == "Exit":
-        missing_states = []
-        for state in all_states:
-            if state not in guessed_states:
-                missing_states.append(state)
+        # List Comprehension
+        missing_states = [state for state in all_states if state not in guessed_states]
         # states_to_learn.csv
         missing_states_dic = {
             "states": missing_states
